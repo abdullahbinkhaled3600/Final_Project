@@ -49,7 +49,7 @@
         </div>
         <ul class="sidebar-menu">
             <li><a href="dashboard.html"><i class="fas fa-home"></i> لوحة التحكم</a></li>
-            <li><a href="profile.html"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+            <li><a href="profile.html"><i class="fas fa-cog"></i> الإعدادات</a></li>
             <li><a href="services.html"><i class="fas fa-concierge-bell"></i> الخدمات الإلكترونية</a></li>
             <li><a href="my_requests.html"><i class="fas fa-file-alt"></i> طلباتي</a></li>
             <li><a href="booking.html" class="active"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
@@ -64,6 +64,47 @@
             <div class="d-flex align-items-center">
                 <i class="fas fa-bars menu-toggle me-3" onclick="toggleSidebar()"></i>
                 <h4 class="m-0 fw-bold">حجز موعد جديد</h4>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <button class="btn btn-light position-relative rounded-circle" type="button"
+                        data-bs-toggle="dropdown">
+                        <i class="fas fa-bell text-muted"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end p-2" style="width: 300px;">
+                        <li>
+                            <h6 class="dropdown-header">آخر الإشعارات</h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <!-- Notification Item -->
+                        <li>
+                            <a class="dropdown-item d-flex gap-2 align-items-start" href="#">
+                                <div class="text-primary"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <small class="d-block text-wrap">تم الموافقة على طلب تجديد الهوية</small>
+                                    <small class="text-muted" style="font-size: 0.7rem;">منذ 2 ساعة</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://ui-avatars.com/api/?name=User+Name&background=5e6ad2&color=fff"
+                            class="rounded-circle" width="40" height="40" alt="User">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="profile.html">الإعدادات</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="index.html">تسجيل خروج</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
