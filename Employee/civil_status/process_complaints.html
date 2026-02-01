@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معالجة البلاغات - إدارة الأحوال المدنية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-hover: #059669;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .complaint-list {
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        .complaint-item {
+            padding: 15px;
+            border-bottom: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: var(--transition);
+            border-right: 4px solid transparent;
+        }
+
+        .complaint-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .complaint-item.active {
+            background-color: #ecfdf5;
+            /* Light green for active */
+            border-right-color: var(--primary-color);
+        }
+
+        .chat-container {
+            height: 400px;
+            overflow-y: auto;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+
+        .message.sent {
+            margin-right: auto;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 15px 15px 0 15px;
+        }
+
+        .message.received {
+            margin-left: auto;
+            background: white;
+            color: var(--text-main);
+            padding: 10px 15px;
+            border-radius: 15px 15px 15px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-address-card fa-2x text-primary"></i>
+            <span class="sidebar-brand">إدارة الأحوال المدنية</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="audit_requests.html"><i class="fas fa-search-dollar"></i> فحص وتدقيق الطلبات</a></li>
+            <li><a href="civil_requests.html"><i class="fas fa-file-invoice"></i> طلبات الأحوال</a></li>
+            <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> المواعيد</a></li>
+            <li><a href="document_printing.html"><i class="fas fa-print"></i> طباعة الوثائق</a></li>
+            <li><a href="process_complaints.html" class="active"><i class="fas fa-comments"></i> معالجة البلاغات</a>
+            </li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> قائمة البلاغات</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> إعدادات الحساب</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث في البلاغات أو برقم الهوية...">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="badge bg-danger px-3 py-2">5 بلاغات عاجلة</div>
+                <div class="badge bg-primary px-3 py-2">موظف قيود مدنية</div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Civil+Officer&background=10b981&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">محمد العسيري</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">قسم الأحوال المدنية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-0 custom-card p-0 overflow-hidden" style="min-height: 80vh;">
+            <!-- Left Side: Complaint List -->
+            <div class="col-md-4 border-start">
+                <div class="p-3 border-bottom bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i
+                                class="fas fa-search text-muted"></i></span>
+                        <input type="text" class="form-control border-start-0" placeholder="بحث في البلاغات...">
+                    </div>
+                </div>
+                <div class="complaint-list">
+                    <div class="complaint-item active">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">#CMP-202 - صالح الغامدي</span>
+                            <span class="small text-muted">منذ ١٠ د</span>
+                        </div>
+                        <div class="small text-truncate text-muted">فقدت بطاقة الهوية الوطنية صباح اليوم وأحتاج بدل
+                            فاقد...</div>
+                        <div class="mt-2">
+                            <span class="badge bg-danger">عاجل</span>
+                            <span class="badge bg-light text-dark border">هوية مفقودة</span>
+                        </div>
+                    </div>
+                    <div class="complaint-item">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">#CMP-203 - ليلى الشهري</span>
+                            <span class="small text-muted">منذ ساعة</span>
+                        </div>
+                        <div class="small text-truncate text-muted">يوجد خطأ في تاريخ الميلاد في شهادة الميلاد
+                            الصادرة...</div>
+                        <div class="mt-2">
+                            <span class="badge bg-warning text-dark">متوسط</span>
+                            <span class="badge bg-light text-dark border">تعديل بيانات</span>
+                        </div>
+                    </div>
+                    <div class="complaint-item">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">#CMP-204 - فهد القحطاني</span>
+                            <span class="small text-muted">أمس</span>
+                        </div>
+                        <div class="small text-truncate text-muted">تقدمت بطلب سجل أسرة منذ أسبوع ولم تصلني رسالة...
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-primary">عادي</span>
+                            <span class="badge bg-light text-dark border">تأخر تسليم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Processing Area -->
+            <div class="col-md-8 d-flex flex-column">
+                <!-- Header Info -->
+                <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="m-0 fw-bold">#CMP-202 - بلاغ فقدان هوية وطنية</h5>
+                        <div class="small text-muted">اسم المواطن: صالح الغامدي | رقم الهوية: 1055443322</div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                            تحديث الحالة: قيد التحقيق
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">قيد التحقيق</a></li>
+                            <li><a class="dropdown-item" href="#">بانتظار رد المواطن</a></li>
+                            <li><a class="dropdown-item" href="#">تم الحل</a></li>
+                            <li><a class="dropdown-item text-danger" href="#">مرفوض/مغلق</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Chat Area -->
+                <div class="p-4 flex-grow-1" style="max-height: 500px; overflow-y: auto;">
+                    <div class="message received">
+                        <div class="small fw-bold mb-1">المواطن (صالح الغامدي)</div>
+                        السلام عليكم، فقدت بطاقة الهوية الوطنية صباح اليوم في السوق، ما هي الإجراءات المطلوبة لاستخراج
+                        بدل فاقد؟
+                        <div class="text-start mt-1" style="font-size: 0.65rem; opacity: 0.7;">09:30 ص</div>
+                    </div>
+                    <div class="message sent">
+                        <div class="small fw-bold mb-1">نظام الأحوال (رد آلي)</div>
+                        وعليكم السلام، يجب الإبلاغ فوراً عن الوثيقة المفقودة "الهوية الوطنية" من خلال منصة أبشر، ثم حجز
+                        موعد طلب بدل فاقد.
+                        <div class="text-end mt-1" style="font-size: 0.65rem; opacity: 0.7;">09:31 ص</div>
+                    </div>
+                    <div class="message received">
+                        <div class="small fw-bold mb-1">المواطن (صالح الغامدي)</div>
+                        تم التبليغ في أبشر وحصلت على رقم مرجعي، هل يمكنني حجز موعد للأسبوع القادم؟
+                        <div class="text-start mt-1" style="font-size: 0.65rem; opacity: 0.7;">10:05 ص</div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="p-3 border-top bg-light">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">الرد على المواطن</label>
+                        <textarea class="form-control" rows="3" placeholder="اكتب ردك هنا..."></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-paperclip"></i> إرفاق
+                                ملف</button>
+                            <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-magic"></i> ردود
+                                جاهزة</button>
+                        </div>
+                        <button class="btn btn-primary-custom px-4">إرسال الرد <i
+                                class="fas fa-paper-plane ms-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Internal Notes (Optional) -->
+                <div class="p-3 bg-warning bg-opacity-10 border-top">
+                    <div class="small fw-bold mb-1 text-warning-emphasis"><i class="fas fa-sticky-note me-1"></i> ملاحظة
+                        داخلية (للموظفين فقط)</div>
+                    <input type="text" class="form-control form-control-sm"
+                        placeholder="أضف ملاحظة لم يراها المواطن...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

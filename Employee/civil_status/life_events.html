@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الواقعات - الأحوال المدنية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-hover: #059669;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: #f0fdf4;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-address-card fa-2x text-primary"></i>
+            <span class="sidebar-brand">إدارة الأحوال المدنية</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="id_requests.html"><i class="fas fa-id-badge"></i> الهوية الوطنية</a></li>
+            <li><a href="life_events.html" class="active"><i class="fas fa-baby-carriage"></i> واقعة (ميلاد/وفاة)</a>
+            </li>
+            <li><a href="family_registry.html"><i class="fas fa-users-rectangle"></i> سجل الأسرة</a></li>
+            <li><a href="verifications.html"><i class="fas fa-user-check"></i> التحقق من البيانات</a></li>
+            <li><a href="review_requests.html"><i class="fas fa-clipboard-check"></i> مراجعة الطلبات والشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-navbar">
+            <h4 class="m-0">تسجيل واقعات (ميلاد / وفاة)</h4>
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-sm btn-info text-white"><i class="fas fa-hospital me-1"></i> بلاغات
+                    المشافي</button>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <div class="custom-card border-start border-4 border-info">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold"><i class="fas fa-baby text-info me-2"></i> واقعات الميلاد الجديدة</h5>
+                        <button class="btn btn-sm btn-primary-custom">تسجيل يدوي</button>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <div>
+                                <div class="fw-bold">مولود: فهد يوسف</div>
+                                <div class="small text-muted">مشفى الملك فيصل - قبل ساعة</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary">اعتماد</button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <div>
+                                <div class="fw-bold">مولودة: سارة علي</div>
+                                <div class="small text-muted">مشفى رعاية - قبل 3 ساعات</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary">اعتماد</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="custom-card border-start border-4 border-secondary">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold"><i class="fas fa-skull-crossbones text-secondary me-2"></i> بلاغات الوفاة
+                        </h5>
+                        <button class="btn btn-sm btn-primary-custom">تسجيل يدوي</button>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <div>
+                                <div class="fw-bold">المتوفى: إبراهيم حمدي</div>
+                                <div class="small text-muted">إشعار رقم #D-772 - صباح اليوم</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-danger">إغلاق القيد</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-card">
+            <h5 class="fw-bold mb-4">أرشيف واقعات الشهر الحالي</h5>
+            <div class="table-responsive">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>رقم الشهادة</th>
+                            <th>النوع</th>
+                            <th>الاسم</th>
+                            <th>التاريخ</th>
+                            <th>الموظف المسؤول</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#B-112</td>
+                            <td><span class="badge bg-info">ميلاد</span></td>
+                            <td>نورة خالد</td>
+                            <td>2024-05-15</td>
+                            <td>أحمد الفيفي</td>
+                            <td><button class="btn btn-sm btn-light"><i class="fas fa-print"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

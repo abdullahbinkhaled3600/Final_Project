@@ -74,7 +74,7 @@
 
                     <form>
                         <div class="row g-3 mb-4">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label class="form-label fw-medium mb-2">نوع الهوية</label>
                                 <select class="form-select form-control-custom">
                                     <option value="" selected disabled>اختر نوع الهوية</option>
@@ -82,10 +82,19 @@
                                     <option value="passport">جواز سفر</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label class="form-label fw-medium mb-2">رقم المعاملة</label>
                                 <input type="text" class="form-control form-control-custom"
                                     placeholder="أدخل رقم المعاملة">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-medium mb-2">الفرع</label>
+                                <select class="form-select form-control-custom">
+                                    <option value="" selected disabled>اختر الفرع</option>
+                                    <option>فرع المركز الرئيسي</option>
+                                    <option>فرع حي الروضة</option>
+                                    <option>فرع المدينة القديمة</option>
+                                </select>
                             </div>
                         </div>
 
@@ -152,6 +161,57 @@
                         <li><i class="fas fa-check text-success me-2 ms-0"></i> في حال عدم الحضور سيتم إلغاء الموعد
                             تلقائياً.</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointments History Table -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="custom-card">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="card-icon mb-0 bg-light text-primary"
+                            style="width: 40px; height: 40px; font-size: 1rem;">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h5 class="fw-bold m-0">سجل المواعيد المحجوزة</h5>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="custom-table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>رقم الموعد</th>
+                                    <th>تاريخ الموعد</th>
+                                    <th>توقيت الموعد</th>
+                                    <th>الحالة</th>
+                                    <th>رقم المعاملة</th>
+                                    <th>الفرع</th>
+                                    <th>تاريخ الإنشاء</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">#APT-2544</td>
+                                    <td>15/10/2023</td>
+                                    <td>09:30 ص</td>
+                                    <td><span class="status-badge status-pending">قادم</span></td>
+                                    <td class="text-muted">#REQ-2023-105</td>
+                                    <td>المركز الرئيسي</td>
+                                    <td class="text-muted">10/10/2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">#APT-2410</td>
+                                    <td>05/09/2023</td>
+                                    <td>11:00 ص</td>
+                                    <td><span class="status-badge status-completed">مكتمل</span></td>
+                                    <td class="text-muted">#REQ-2023-098</td>
+                                    <td>فرع حي الروضة</td>
+                                    <td class="text-muted">01/09/2023</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

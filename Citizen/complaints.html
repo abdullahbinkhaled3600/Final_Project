@@ -86,17 +86,27 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label class="form-label fw-medium">الدولة</label>
-                                <input type="text" class="form-control form-control-custom" value="اليمن"
-                                    placeholder="الدولة">
+                                <label class="form-label fw-medium">الفرع</label>
+                                <select class="form-select form-control-custom">
+                                    <option value="" selected disabled>اختر الفرع</option>
+                                    <option>فرع المركز الرئيسي</option>
+                                    <option>فرع حي الروضة</option>
+                                    <option>فرع المدينة القديمة</option>
+                                </select>
                             </div>
                         </div>
 
-
-                        <div class="mb-3">
-                            <label class="form-label fw-medium">عنوان الرسالة</label>
-                            <input type="text" class="form-control form-control-custom"
-                                placeholder="مثال: تأخير في إصدار رخصة">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium">رقم المعاملة (إن وجد)</label>
+                                <input type="text" class="form-control form-control-custom"
+                                    placeholder="مثال: #REQ-2023-105">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium">عنوان الرسالة</label>
+                                <input type="text" class="form-control form-control-custom"
+                                    placeholder="مثال: تأخير في إصدار رخصة">
+                            </div>
                         </div>
 
                         <div class="mb-3">
@@ -115,6 +125,50 @@
                             <button type="submit" class="btn btn-primary-custom px-5">إرسال</button>
                         </div>
                     </form>
+                </div>
+
+                <!-- Previous Complaints Table -->
+                <div class="custom-card mt-5">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="card-icon mb-0 bg-light text-primary"
+                            style="width: 40px; height: 40px; font-size: 1rem;">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h5 class="fw-bold m-0">سجل الشكاوى السابقة</h5>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="custom-table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>رقم الشكوى</th>
+                                    <th>الموضوع</th>
+                                    <th>الحالة</th>
+                                    <th>تاريخ التقديم</th>
+                                    <th>رقم المعاملة</th>
+                                    <th>الفرع</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">#CMP-1024</td>
+                                    <td>تأخير استلام البطاقة</td>
+                                    <td><span class="status-badge status-processing">قيد المعالجة</span></td>
+                                    <td class="text-muted">25/10/2023</td>
+                                    <td class="text-muted">#REQ-105</td>
+                                    <td>المركز الرئيسي</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">#CMP-1008</td>
+                                    <td>اقتراح تحسين البوابة</td>
+                                    <td><span class="status-badge status-completed">مكتمل</span></td>
+                                    <td class="text-muted">10/09/2023</td>
+                                    <td class="text-muted">-</td>
+                                    <td>أمانة العاصمة</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

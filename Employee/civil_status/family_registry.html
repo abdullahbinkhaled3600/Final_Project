@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل الأسرة - الأحوال المدنية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-hover: #059669;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .family-tree-icon {
+            color: #10b981;
+            opacity: 0.2;
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            font-size: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-address-card fa-2x text-primary"></i>
+            <span class="sidebar-brand">إدارة الأحوال المدنية</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="id_requests.html"><i class="fas fa-id-badge"></i> الهوية الوطنية</a></li>
+            <li><a href="life_events.html"><i class="fas fa-baby-carriage"></i> واقعة (ميلاد/وفاة)</a></li>
+            <li><a href="family_registry.html" class="active"><i class="fas fa-users-rectangle"></i> سجل الأسرة</a></li>
+            <li><a href="verifications.html"><i class="fas fa-user-check"></i> التحقق من البيانات</a></li>
+            <li><a href="review_requests.html"><i class="fas fa-clipboard-check"></i> مراجعة الطلبات والشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-navbar">
+            <h4 class="m-0">سجل الأسرة والقيود العائلية</h4>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث برقم سجل رب الأسرة...">
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-7">
+                <div class="custom-card position-relative overflow-hidden">
+                    <h5 class="fw-bold mb-4">تحديث سجل الأسرة</h5>
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <label class="form-label">رقم الهوية لرب الأسرة</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="مثال: 1029384756">
+                                <button class="btn btn-primary-custom">جلب البيانات</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="p-3 bg-light rounded-3">
+                                <div class="small text-muted">إضافة مولود</div>
+                                <button class="btn btn-sm btn-outline-success mt-2">إضافة للقيد</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="p-3 bg-light rounded-3">
+                                <div class="small text-muted">إضافة زوجة (واقعة زواج)</div>
+                                <button class="btn btn-sm btn-outline-success mt-2">إضافة للقيد</button>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fas fa-users-viewfinder family-tree-icon"></i>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="custom-card">
+                    <h5 class="fw-bold mb-3">إحصائيات السجلات</h5>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>سجلات تم تحديثها اليوم</span>
+                        <span class="fw-bold">12</span>
+                    </div>
+                    <div class="progress mb-3" style="height: 5px;">
+                        <div class="progress-bar bg-success" style="width: 70%"></div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>طلبات فصل قيد (زواج أبناء)</span>
+                        <span class="fw-bold">4</span>
+                    </div>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar bg-warning" style="width: 40%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-card">
+            <h5 class="fw-bold mb-4">آخر طلبات إصدار سجل الأسرة للمتزوجين حديثاً</h5>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>رقم المعاملة</th>
+                            <th>الزوج (رب الأسرة)</th>
+                            <th>تاريخ عقد النكاح</th>
+                            <th>حالة الطلب</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#FAM-1102</td>
+                            <td>خالد مساعد الحربي</td>
+                            <td>2024-05-10</td>
+                            <td><span class="badge bg-success">جاهز للطباعة</span></td>
+                            <td><button class="btn btn-sm btn-primary-custom"><i class="fas fa-print"></i> إصدار
+                                    كرت</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

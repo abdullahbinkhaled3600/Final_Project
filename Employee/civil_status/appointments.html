@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المواعيد - إدارة الأحوال المدنية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-hover: #059669;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .appointment-slot {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .appointment-slot:hover {
+            border-color: var(--primary-color);
+            background-color: #f8fafc;
+        }
+
+        .time-badge {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-address-card fa-2x text-primary"></i>
+            <span class="sidebar-brand">إدارة الأحوال المدنية</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="audit_requests.html"><i class="fas fa-search-dollar"></i> فحص وتدقيق الطلبات</a></li>
+            <li><a href="civil_requests.html"><i class="fas fa-file-invoice"></i> طلبات الأحوال</a></li>
+            <li><a href="appointments.html" class="active"><i class="fas fa-calendar-check"></i> المواعيد</a></li>
+            <li><a href="document_printing.html"><i class="fas fa-print"></i> طباعة الوثائق</a></li>
+            <li><a href="process_complaints.html"><i class="fas fa-comments"></i> معالجة البلاغات</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> قائمة البلاغات</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> إعدادات الحساب</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <h4 class="m-0">المواعيد المجدولة لليوم</h4>
+            <div class="d-flex align-items-center gap-3">
+                <input type="date" class="form-control" value="2024-05-18">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Civil+Officer&background=10b981&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">محمد العسيري</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">قسم الأحوال المدنية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="custom-card mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold m-0">قائمة الحضور (الفترة الصباحية)</h5>
+                        <span class="badge bg-info">جاري استقبال المراجعين</span>
+                    </div>
+
+                    <div class="appointment-slot d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="time-badge">08:30 ص</span>
+                            <div>
+                                <div class="fw-bold">فهد سليمان الدوسري</div>
+                                <div class="text-muted small">طلب رقم: #CIV-7761 | استلام هوية وطنية</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check me-1"></i> تسجيل حضور</button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="appointment-slot d-flex justify-content-between align-items-center border-success"
+                        style="background-color: #f0fdf4;">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="time-badge" style="background-color: #dcfce7; color: #166534;">09:00 ص</span>
+                            <div>
+                                <div class="fw-bold">سلطان محمد العتيبي</div>
+                                <div class="text-muted small">طلب رقم: #CIV-7765 | استلام شهادة ميلاد</div>
+                            </div>
+                        </div>
+                        <div class="text-success fw-bold">
+                            <i class="fas fa-check-circle me-1"></i> تم التسليم
+                        </div>
+                    </div>
+
+                    <div class="appointment-slot d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="time-badge">09:30 ص</span>
+                            <div>
+                                <div class="fw-bold">مريم أحمد القحطاني</div>
+                                <div class="text-muted small">طلب رقم: #CIV-7769 | استلام سجل أسرة</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check me-1"></i> تسجيل حضور</button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="appointment-slot d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="time-badge">10:00 ص</span>
+                            <div>
+                                <div class="fw-bold">خالد عبدالله المطيري</div>
+                                <div class="text-muted small">طلب رقم: #CIV-7770 | تحديث بيانات</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check me-1"></i> تسجيل حضور</button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="custom-card text-center mb-4">
+                    <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">12 / 45</h3>
+                    <p class="text-muted">مراجع تم خدمتهم اليوم</p>
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 27%"></div>
+                    </div>
+                </div>
+
+                <div class="custom-card mb-4">
+                    <h5 class="fw-bold mb-3">إحصائيات اليوم</h5>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">مواعيد مجدولة</span>
+                        <span class="fw-bold">45</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">حضور فعلي</span>
+                        <span class="fw-bold text-success">38</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">غياب</span>
+                        <span class="fw-bold text-danger">7</span>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <h5 class="fw-bold mb-3">تنبيهات المواعيد</h5>
+                    <div class="alert alert-warning py-2 small">
+                        <i class="fas fa-exclamation-triangle me-1"></i> 5 مراجعين تأخروا عن موعدهم لأكثر من 15 دقيقة.
+                    </div>
+                    <div class="alert alert-info py-2 small">
+                        <i class="fas fa-info-circle me-1"></i> يوجد 8 مواعيد متبقية للفترة المسائية.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

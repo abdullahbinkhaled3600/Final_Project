@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موظف الجوازات - بوابة الخدمات الذكية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --primary-color: #315d8e;
+            /* Passports Blue */
+            --primary-hover: #214164;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-passport fa-2x text-primary"></i>
+            <span class="sidebar-brand">إدارة الجوازات</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="audit_requests.html"><i class="fas fa-search-dollar"></i> فحص وتدقيق الطلبات</a></li>
+            <li><a href="passport_requests.html"><i class="fas fa-file-invoice"></i> طلبات الجوازات</a></li>
+            <li><a href="passport_appointments.html"><i class="fas fa-calendar-check"></i> مواعيد البصمة</a></li>
+            <li><a href="passport_printing.html"><i class="fas fa-print"></i> طباعة الجوازات</a></li>
+            <li><a href="process_complaints.html"><i class="fas fa-comments"></i> معالجة البلاغات</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> قائمة البلاغات</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> إعدادات الحساب</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث عن جواز أو طلب...">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="badge bg-primary px-3 py-2">موظف وثائق سفر</div>
+                <div class="dropdown">
+                    <button class="btn btn-light position-relative" id="notifDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-bell"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="width: 300px;">
+                        <li class="p-3 border-bottom fw-bold">تنبيهات الجوازات</li>
+                        <li><a class="dropdown-item p-3 border-bottom" href="#">طلب تجديد جواز مستعجل #P-992</a></li>
+                        <li><a class="dropdown-item p-3" href="#">نفاد مخزون دفاتر الجوازات العادية</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Passport+Officer&background=315d8e&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">نايف الخالدي</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">قسم الجوازات</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mb-4">إحصائيات قسم الجوازات</h4>
+
+        <!-- Statistics -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.1s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-primary text-white">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="stat-val">12</div>
+                    <div class="stat-lbl">طلبات جديدة اليوم</div>
+                </div>
+            </div>
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.2s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-warning text-white">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <div class="stat-val">45</div>
+                    <div class="stat-lbl">مواعيد البصمة القادمة</div>
+                </div>
+            </div>
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.3s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-success text-white">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <div class="stat-val">892</div>
+                    <div class="stat-lbl">جوازات تم تسليمها</div>
+                </div>
+            </div>
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.4s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-danger text-white">
+                        <i class="fas fa-plane-arrival"></i>
+                    </div>
+                    <div class="stat-val">3</div>
+                    <div class="stat-lbl">جوازات مفقودة (تبليغ)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- New Passport Requests Table -->
+            <div class="col-lg-12 animated-fade-in" style="animation-delay: 0.5s;">
+                <div class="custom-card">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="m-0 fw-bold">آخر طلبات الجوازات</h5>
+                        <button class="btn btn-sm btn-primary-custom"><i class="fas fa-plus me-1"></i> طلب جديد
+                            (يدوي)</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>اسم المواطن</th>
+                                    <th>نوع الجواز</th>
+                                    <th>تاريخ التقديم</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراء</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">#PAS-5541</td>
+                                    <td>خالد مساعد الحربي</td>
+                                    <td>عادي (تجديد)</td>
+                                    <td>2024-05-15</td>
+                                    <td><span class="status-badge bg-pending">بانتظار البصمة</span></td>
+                                    <td><button class="btn btn-sm btn-primary-custom">تدقيق</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">#PAS-5542</td>
+                                    <td>عبير ناصر القحطاني</td>
+                                    <td>ديبلوماسي</td>
+                                    <td>2024-05-15</td>
+                                    <td><span class="status-badge bg-processing">قيد الطباعة</span></td>
+                                    <td><button class="btn btn-sm btn-primary-custom">تدقيق</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">#PAS-5543</td>
+                                    <td>سلطان ممدوح</td>
+                                    <td>تجاري (رجال أعمال)</td>
+                                    <td>2024-05-14</td>
+                                    <td><span class="status-badge bg-approved">جاهز للتسليم</span></td>
+                                    <td><button class="btn btn-sm btn-primary-custom">تسليم</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

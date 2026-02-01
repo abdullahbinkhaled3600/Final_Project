@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البلاغات والشكاوى - إدارة الأحوال المدنية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-hover: #059669;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-address-card fa-2x text-primary"></i>
+            <span class="sidebar-brand">إدارة الأحوال المدنية</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="audit_requests.html"><i class="fas fa-search-dollar"></i> فحص وتدقيق الطلبات</a></li>
+            <li><a href="civil_requests.html"><i class="fas fa-file-invoice"></i> طلبات الأحوال</a></li>
+            <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> المواعيد</a></li>
+            <li><a href="document_printing.html"><i class="fas fa-print"></i> طباعة الوثائق</a></li>
+            <li><a href="process_complaints.html"><i class="fas fa-comments"></i> معالجة البلاغات</a></li>
+            <li><a href="complaints.html" class="active"><i class="fas fa-exclamation-circle"></i> قائمة البلاغات</a>
+            </li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> إعدادات الحساب</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث في البلاغات...">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="badge bg-danger px-3 py-2">5 بلاغات عاجلة</div>
+                <div class="badge bg-primary px-3 py-2">موظف قيود مدنية</div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Civil+Officer&background=10b981&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">محمد العسيري</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">قسم الأحوال المدنية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="m-0">قائمة البلاغات والاعتراضات</h4>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="custom-card">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold m-0">البلاغات الواردة حديثاً</h5>
+                        <div class="d-flex gap-2">
+                            <span class="badge bg-danger">3 عاجل</span>
+                            <span class="badge bg-warning text-dark">8 قيد المراجعة</span>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>رقم البلاغ</th>
+                                    <th>نوع البلاغ</th>
+                                    <th>المشتكي</th>
+                                    <th>التاريخ</th>
+                                    <th>الأولوية</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراء</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#CMP-202</td>
+                                    <td>فقدان هوية وطنية</td>
+                                    <td>صالح الغامدي</td>
+                                    <td>2024-05-18</td>
+                                    <td><span class="badge bg-danger">عاجل جداً</span></td>
+                                    <td><span class="status-badge bg-pending">قيد التحقيق</span></td>
+                                    <td><button class="btn btn-sm btn-primary-custom"
+                                            onclick="window.location.href='process_complaints.html'">معالجة</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#CMP-203</td>
+                                    <td>خطأ في تاريخ الميلاد</td>
+                                    <td>ليلى الشهري</td>
+                                    <td>2024-05-18</td>
+                                    <td><span class="badge bg-info">عادي</span></td>
+                                    <td><span class="status-badge bg-processing">بانتظار الموافقة</span></td>
+                                    <td><button class="btn btn-sm btn-primary-custom"
+                                            onclick="window.location.href='process_complaints.html'">معالجة</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#CMP-204</td>
+                                    <td>تأخر في إصدار سجل الأسرة</td>
+                                    <td>فهد القحطاني</td>
+                                    <td>2024-05-17</td>
+                                    <td><span class="badge bg-warning text-dark">متوسطة</span></td>
+                                    <td><span class="status-badge bg-approved">تم الرد</span></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary">تفاصيل</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <nav class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">السابق</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">التالي</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
