@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+:root {
+    /* هوية الجوازات - أخضر داكن رسمي */
+    --primary-color: #064e3b;
+    /* Emerald 900 */
+    --secondary-color: #047857;
+    /* Emerald 700 */
+    --accent-color: #10b981;
+    /* Emerald 500 */
+    --success-color: #10b981;
+    --warning-color: #fbbf24;
+    --danger-color: #ef4444;
+
+    /* خلفيات مميزة للجوازات */
+    --bg-light: #f0fdf4;
+    /* Minty Off-white */
+    --sidebar-bg: #111827;
+    /* Gray 900 - Darker */
+    --sidebar-text: #9ca3af;
+
+    --card-shadow: 0 0.75rem 1.5rem rgba(6, 78, 59, 0.06);
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-light);
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling - Passport Identity */
+.sidebar {
+    height: 100vh;
+    width: 260px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--sidebar-bg);
+    /* Green tint overlay */
+    background-image: linear-gradient(180deg, rgba(6, 78, 59, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 1050;
+    overflow-y: auto;
+    border-left: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.sidebar-header {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-header h3 {
+    color: #ecfdf5;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.sidebar-menu li a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+.sidebar-menu li a:hover {
+    color: #fff;
+    background: rgba(16, 185, 129, 0.1);
+    transform: translateX(-5px);
+}
+
+.sidebar-menu li.active a {
+    color: white !important;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%) !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu li i {
+    font-size: 1.1rem;
+    width: 25px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Main Content Wrapper */
+.main-content {
+    margin-right: 260px;
+    padding: 24px 40px;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    background-color: var(--bg-light);
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .sidebar {
+        right: -260px;
+    }
+
+    .sidebar.show {
+        right: 0;
+    }
+
+    .main-content {
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    .sidebar.show::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(17, 24, 39, 0.7);
+        z-index: -1;
+    }
+
+    .top-navbar {
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Top Navbar */
+.top-navbar {
+    background: white;
+    padding: 18px 30px;
+    box-shadow: 0 2px 15px rgba(6, 78, 59, 0.04);
+    border-radius: 16px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(16, 185, 129, 0.2);
+}
+
+.page-title {
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    font-size: 1.4rem;
+    border-right: 4px solid var(--success-color);
+    padding-right: 15px;
+}
+
+/* Dashboard Cards */
+.stat-card {
+    background: white;
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(6, 78, 59, 0.1);
+}
+
+.stat-card .icon-box {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background: rgba(16, 185, 129, 0.1) !important;
+    color: var(--secondary-color) !important;
+}
+
+/* Badges and Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(6, 78, 59, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(6, 78, 59, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.rounded-card {
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: var(--card-shadow);
+    background: #fff;
+}
+
+/* Tables */
+.table-custom {
+    white-space: nowrap;
+}
+
+.table-custom thead th {
+    background: #f0fdf4;
+    border-top: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #374151;
+    padding: 15px;
+}
+
+.table-custom tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Approvals Page */
+.approval-card {
+    border-right: 5px solid var(--accent-color);
+    transition: transform 0.2s;
+    background: #fff;
+}
+
+.approval-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.btn-approve {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.btn-reject {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.toast-container {
+    padding-bottom: 2rem !important;
+    padding-left: 2rem !important;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي | نظام الأحوال</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>مدير الأحوال</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i> لوحة التحكم</a></li>
+            <li><a href="approvals.html"><i class="fa-solid fa-check-to-slot"></i> الموافقات</a></li>
+            <li><a href="users.html"><i class="fa-solid fa-users"></i> إدارة المستخدمين</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-concierge-bell"></i> إدارة الخدمات</a></li>
+            <li><a href="complaints.html"><i class="fa-solid fa-triangle-exclamation"></i> الشكاوى</a></li>
+            <li><a href="reports.html"><i class="fa-solid fa-chart-line"></i> التقارير</a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> الإعدادات</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <nav class="top-navbar">
+            <h4 class="page-title">الملف الشخصي</h4>
+
+            <!-- User Profile & Notifications Dropdown -->
+            <div class="d-flex align-items-center gap-3">
+                <!-- Notifications -->
+                <div class="dropdown">
+                    <div class="notifications position-relative" role="button" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-bell fs-5 text-secondary"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end p-0 border-0 shadow-lg mt-2" style="width: 300px;">
+                        <li class="p-3 border-bottom bg-light rounded-top">
+                            <h6 class="mb-0 fw-bold">التنبيهات الجديدة</h6>
+                        </li>
+                        <li>
+                            <a class="dropdown-item p-3 border-bottom d-flex gap-3 align-items-start" href="#">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded px-2 py-1"><i
+                                        class="fa-solid fa-file-invoice"></i></div>
+                                <div>
+                                    <p class="mb-1 small fw-bold">طلب تعديل اسم جديد</p>
+                                    <small class="text-muted">منذ 15 دقيقة</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item p-3 border-bottom d-flex gap-3 align-items-start" href="#">
+                                <div class="bg-danger bg-opacity-10 text-danger rounded px-2 py-1"><i
+                                        class="fa-solid fa-triangle-exclamation"></i></div>
+                                <div>
+                                    <p class="mb-1 small fw-bold">شكوى عاجلة متأخرة</p>
+                                    <small class="text-muted">منذ ساعة</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item text-center p-2 small text-primary fw-bold" href="#">عرض كل
+                                التنبيهات</a></li>
+                    </ul>
+                </div>
+
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                    <div class="user-profile d-flex align-items-center gap-3" role="button" data-bs-toggle="dropdown">
+                        <div class="user-info text-end d-none d-md-block">
+                            <p class="mb-0 fw-bold">مدير الأحوال</p>
+                            <small class="text-muted">نظام الأحوال</small>
+                        </div>
+                        <img src="https://ui-avatars.com/api/?name=Civil+Manager&background=4361ee&color=fff"
+                            class="rounded-circle" width="40" alt="Profile">
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg mt-2">
+                        <li>
+                            <h6 class="dropdown-header">حسابي</h6>
+                        </li>
+                        <li><a class="dropdown-item active" href="profile.html"><i class="fa-solid fa-user me-2"></i>
+                                الملف الشخصي</a></li>
+                        <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2"></i>
+                                الإعدادات</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="../index.html"><i
+                                    class="fa-solid fa-right-from-bracket me-2"></i> تسجيل الخروج</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row g-4">
+                <!-- User Details -->
+                <div class="col-md-4">
+                    <div class="card rounded-card p-4 text-center h-100">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="https://ui-avatars.com/api/?name=Civil+Manager&background=4361ee&color=fff&size=128"
+                                class="rounded-circle shadow-sm" width="120" alt="Profile">
+                            <button class="btn btn-sm btn-primary position-absolute bottom-0 end-0 rounded-circle"
+                                style="width: 32px; height: 32px;">
+                                <i class="fa-solid fa-camera"></i>
+                            </button>
+                        </div>
+                        <h5 class="fw-bold mb-1">مدير الأحوال</h5>
+                        <p class="text-muted mb-3">مدير عام - فرع الرياض</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <span class="badge bg-primary-subtle text-primary px-3">نشط</span>
+                            <span class="badge bg-light text-dark border px-3">ID: #M-9021</span>
+                        </div>
+                        <hr class="my-4">
+                        <div class="text-start">
+                            <p class="small text-muted mb-1"><i class="fa-solid fa-envelope me-2"></i> البريد الإلكتروني
+                            </p>
+                            <p class="fw-bold">manager@civil.gov.sa</p>
+                            <p class="small text-muted mb-1 mt-3"><i class="fa-solid fa-phone me-2"></i> رقم الهاتف</p>
+                            <p class="fw-bold">+966 55 555 5555</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update Info & Password -->
+                <div class="col-md-8">
+                    <div class="card rounded-card p-4 mb-4">
+                        <h5 class="fw-bold mb-4">تحديث المعلومات الشخصية</h5>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">الاسم الأول</label>
+                                    <input type="text" class="form-control" value="مدير">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">اسم العائلة</label>
+                                    <input type="text" class="form-control" value="الأحوال">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" value="manager@civil.gov.sa">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">رقم الهاتف</label>
+                                    <input type="tel" class="form-control" value="0555555555">
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-primary px-4">حفظ التغييرات</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card rounded-card p-4">
+                        <h5 class="fw-bold mb-4 text-danger">تغيير كلمة المرور</h5>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">كلمة المرور الحالية</label>
+                                    <input type="password" class="form-control" placeholder="********">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" placeholder="********">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">تأكيد كلمة المرور</label>
+                                    <input type="password" class="form-control" placeholder="********">
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-outline-danger px-4">تحديث كلمة المرور</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

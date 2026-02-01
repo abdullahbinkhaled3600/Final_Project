@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموافقات | نظام الأحوال</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>مدير الأحوال</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i> لوحة التحكم</a></li>
+            <li class="active"><a href="approvals.html"><i class="fa-solid fa-check-to-slot"></i> الموافقات</a></li>
+            <li><a href="users.html"><i class="fa-solid fa-users"></i> إدارة المستخدمين</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-concierge-bell"></i> إدارة الخدمات</a></li>
+            <li><a href="complaints.html"><i class="fa-solid fa-triangle-exclamation"></i> الشكاوى</a></li>
+            <li><a href="reports.html"><i class="fa-solid fa-chart-line"></i> التقارير</a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> الإعدادات</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <nav class="top-navbar">
+            <h4 class="page-title">طلبات الإجراءات المعلقة للموافقة</h4>
+            <div class="user-profile d-flex align-items-center gap-3">
+                <div class="user-info text-end">
+                    <p class="mb-0 fw-bold">مدير الأحوال</p>
+                </div>
+                <img src="https://ui-avatars.com/api/?name=Civil+Manager&background=4361ee&color=fff"
+                    class="rounded-circle" width="40" alt="Profile">
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <!-- Filter Section -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="btn-group">
+                    <button class="btn btn-primary active">الكل</button>
+                    <button class="btn btn-outline-primary">هوية وطنية</button>
+                    <button class="btn btn-outline-primary">مواليد</button>
+                    <button class="btn btn-outline-primary">سجل الأسرة</button>
+                </div>
+                <div class="text-muted">عرض 3 طلبات معلقة</div>
+            </div>
+
+            <!-- Approval Cards -->
+            <div class="row g-4">
+                <!-- Approval Item 1 -->
+                <div class="col-12">
+                    <div class="card rounded-card p-4 approval-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3"
+                                        style="width: 60px; height: 60px; display: flex; align-items:center; justify-content:center;">
+                                        <i class="fa-solid fa-id-card fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">النوع</small>
+                                        <span class="fw-bold">هوية وطنية</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h6 class="mb-1">موافقة على إصدار هوية جديدة (بدل فاقد)</h6>
+                                <p class="text-muted small mb-0">المواطن: عبدالكريم ناصر | رقم الهوية: 1056XXXXX</p>
+                                <p class="text-primary small mb-0 mt-1"><i class="fa-solid fa-user-tie me-1"></i> رفع
+                                    بواسطة: سعيد الشهري (موظف الاستقبال)</p>
+                            </div>
+                            <div class="col-md-2">
+                                <small class="text-muted d-block">تاريخ الرفع</small>
+                                <span>30 يناير 2026</span>
+                            </div>
+                            <div class="col-md-3 text-start">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal"
+                                    data-bs-target="#viewDocsModal">
+                                    <i class="fa-solid fa-file-contract me-2"></i> مراجعة المستندات
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Approval Item 2 -->
+                <div class="col-12">
+                    <div class="card rounded-card p-4 approval-card" style="border-right-color: #4cc9f0;">
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="icon-box bg-info bg-opacity-10 text-info rounded-circle p-3"
+                                        style="width: 60px; height: 60px; display: flex; align-items:center; justify-content:center;">
+                                        <i class="fa-solid fa-baby fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">النوع</small>
+                                        <span class="fw-bold">تسجيل واقعة</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h6 class="mb-1">اعتماد تسجيل مولود جديد </h6>
+                                <p class="text-muted small mb-0">المواطن: فهد العتيبي | المولود: يوسف</p>
+                                <p class="text-primary small mb-0 mt-1"><i class="fa-solid fa-user-tie me-1"></i> رفع
+                                    بواسطة: منى الأحمد (مدقق بيانات)</p>
+                            </div>
+                            <div class="col-md-2">
+                                <small class="text-muted d-block">تاريخ الرفع</small>
+                                <span>29 يناير 2026</span>
+                            </div>
+                            <div class="col-md-3 text-start">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal"
+                                    data-bs-target="#viewDocsModal">
+                                    <i class="fa-solid fa-file-contract me-2"></i> مراجعة المستندات
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Documents Modal -->
+    <div class="modal fade" id="viewDocsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4" style="height: 85vh;">
+                <div class="modal-header border-0 px-4 py-3 bg-light">
+                    <h5 class="modal-title fw-bold">مراجعة المستندات والبيانات</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="row h-100 g-0">
+                        <!-- Documents Viewer (Right Side) -->
+                        <div
+                            class="col-md-8 bg-dark h-100 position-relative d-flex align-items-center justify-content-center">
+                            <!-- Placeholder for Document Image -->
+                            <div class="text-center text-white opacity-50">
+                                <i class="fa-solid fa-file-pdf fa-4x mb-3"></i>
+                                <p>نموذج الطلب / المستندات المرفقة</p>
+                            </div>
+                            <!-- Navigation Arrows -->
+                            <button class="btn btn-light rounded-circle position-absolute start-0 ms-3"><i
+                                    class="fa-solid fa-chevron-left"></i></button>
+                            <button class="btn btn-light rounded-circle position-absolute end-0 me-3"><i
+                                    class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+
+                        <!-- Actions & Details (Left Side) -->
+                        <div class="col-md-4 h-100 border-start bg-white d-flex flex-column">
+                            <div class="p-4 flex-grow-1 overflow-auto">
+                                <h6 class="fw-bold mb-3 border-bottom pb-2">بيانات الطلب</h6>
+                                <div class="mb-3">
+                                    <label class="small text-muted">مقدم الطلب</label>
+                                    <p class="fw-bold mb-0">عبدالكريم ناصر</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small text-muted">رقم الهوية</label>
+                                    <p class="fw-bold mb-0">1056XXXXX</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small text-muted">نوع الطلب</label>
+                                    <p class="fw-bold mb-0">إصدار هوية بدل فاقد</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small text-muted">ملاحظات الموظف</label>
+                                    <p class="small bg-light p-2 rounded">تم التأكد من صحة البلاغ.</p>
+                                </div>
+
+                                <h6 class="fw-bold mb-3 border-bottom pb-2 mt-4">قرار المدير</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small">ملاحظات (اختياري)</label>
+                                    <textarea class="form-control" rows="3"
+                                        placeholder="أدخل سبب الرفض أو ملاحظات القبول..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="p-4 border-top bg-light">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <button class="btn btn-success w-100 py-2"><i
+                                                class="fa-solid fa-check me-2"></i> اعتماد نهائي</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-danger w-100 py-2"><i class="fa-solid fa-xmark me-2"></i>
+                                            رفض الطلب</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
