@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصحيح البيانات - سجل المواليد</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-hover: #0284c7;
+        }
+
+        .sidebar-brand,
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-baby-carriage fa-2x text-primary"></i>
+            <span class="sidebar-brand">سجل المواليد</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="birth_requests.html"><i class="fas fa-file-invoice"></i> طلبات تسجيل المواليد</a></li>
+            <li><a href="new_birth.html"><i class="fas fa-plus-circle"></i> تسجيل مولود جديد</a></li>
+            <li><a href="certificates.html"><i class="fas fa-certificate"></i> إصدار الشهادات</a></li>
+            <li><a href="corrections.html" class="active"><i class="fas fa-edit"></i> تصحيح البيانات</a></li>
+            <li><a href="archive.html"><i class="fas fa-archive"></i> الأرشيف</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="../index.html"><i class="fas fa-arrow-right"></i> عودة للأحوال</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="m-0">طلبات تصحيح بيانات المواليد</h4>
+            <button class="btn btn-primary-custom"><i class="fas fa-plus"></i> طلب تصحيح جديد</button>
+        </div>
+
+        <div class="custom-card">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>اسم المولود</th>
+                            <th>نوع التعديل</th>
+                            <th>البيان القديم</th>
+                            <th>البيان الجديد</th>
+                            <th>الحالة</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#COR-502</td>
+                            <td>نايف فهد السبيعي</td>
+                            <td>تعديل الاسم الأول</td>
+                            <td class="text-danger">نايفا</td>
+                            <td class="text-success">نايف</td>
+                            <td><span class="badge bg-warning text-dark">جديد</span></td>
+                            <td><button class="btn btn-sm btn-primary-custom" data-bs-toggle="modal"
+                                    data-bs-target="#correctionModal">مراجعة</button></td>
+                        </tr>
+                        <tr>
+                            <td>#COR-498</td>
+                            <td>لمى أحمد العتيبي</td>
+                            <td>تعديل تاريخ الميلاد</td>
+                            <td class="text-danger">2024-05-30</td>
+                            <td class="text-success">2024-05-29</td>
+                            <td><span class="badge bg-success">تم الاعتماد</span></td>
+                            <td><button class="btn btn-sm btn-outline-secondary" disabled>تم</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Correction Review Modal -->
+    <div class="modal fade" id="correctionModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">مراجعة طلب تصحيح (#COR-502)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> يرجى التأكد من الوثائق المرفقة (تبليغ الولادة
+                        الأصلي) قبل اعتماد التعديل.
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label text-muted">الاسم الحالي (المسجل)</label>
+                            <input type="text" class="form-control" value="نايفا فهد السبيعي" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold text-success">الاسم المطلوب</label>
+                            <input type="text" class="form-control border-success" value="نايف فهد السبيعي" readonly>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h6 class="fw-bold">المرفقات</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm"><i class="fas fa-file-image me-1"></i>
+                                    صورة الهوية</button>
+                                <button class="btn btn-outline-primary btn-sm"><i class="fas fa-file-medical me-1"></i>
+                                    خطاب المستشفى</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-success">اعتماد التصحيح</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

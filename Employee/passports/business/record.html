@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جواز رجال الأعمال - سجل الجوازات</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --primary-hover: #1a252f;
+            --accent-color: #c0392b;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-briefcase fa-2x text-primary"></i>
+            <span class="sidebar-brand">جواز رجال الأعمال</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="requests.html"><i class="fas fa-user-tie"></i> طلبات رجال الأعمال</a></li>
+            <li><a href="approvals.html"><i class="fas fa-stamp"></i> الموافقات الخاصة</a></li>
+            <li><a href="record.html" class="active"><i class="fas fa-search"></i> سجل الجوازات</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> الإعدادات</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث...">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="badge bg-dark px-3 py-2">وحدة كبار العملاء (رجال الأعمال)</div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Business+Officer&background=2c3e50&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">أستاذ فيصل</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">إدارة الجوازات الخاصة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mb-4">سجل جوازات رجال الأعمال</h4>
+
+        <!-- Filter Card -->
+        <div class="custom-card mb-4">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">رقم الجواز</label>
+                    <input type="text" class="form-control" placeholder="B...">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">السجل التجاري/الجهة</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">الحالة</label>
+                    <select class="form-select">
+                        <option value="">الكل</option>
+                        <option value="active">فعال</option>
+                        <option value="suspended">معلق</option>
+                        <option value="cancelled">ملغي</option>
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button class="btn btn-primary-custom w-100"><i class="fas fa-filter me-2"></i> بحث</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Records Table -->
+        <div class="custom-card">
+            <h5 class="card-title mb-4">قائمة الجوازات الخاصة</h5>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>رقم الجواز</th>
+                            <th>حامل الجواز</th>
+                            <th>الجهة / السجل</th>
+                            <th>تاريخ الانتهاء</th>
+                            <th>الحالة</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">B-998811</td>
+                            <td>الشيخ محمد بن عبدالله</td>
+                            <td>مجموعة القابضة (1010XXXXXX)</td>
+                            <td>2028-12-31</td>
+                            <td><span class="badge bg-success">فعال</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-dark" title="عرض التفاصيل"><i
+                                        class="fas fa-eye"></i></button>
+                                <button class="btn btn-sm btn-outline-danger" title="تعليق الجواز"
+                                    data-bs-toggle="modal" data-bs-target="#suspendModal"><i
+                                        class="fas fa-ban"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">B-998822</td>
+                            <td>عبدالعزيز الخالد</td>
+                            <td>شركة الاستثمارات الدولية</td>
+                            <td>2024-05-20</td>
+                            <td><span class="badge bg-warning text-dark">قارب على الانتهاء</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-dark" title="عرض التفاصيل"><i
+                                        class="fas fa-eye"></i></button>
+                                <a href="requests.html" class="btn btn-sm btn-outline-success" title="تجديد"><i
+                                        class="fas fa-sync-alt"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">B-998833</td>
+                            <td>سليمان العلي</td>
+                            <td>مؤسسة التجارة العامة</td>
+                            <td>2025-01-01</td>
+                            <td><span class="badge bg-danger">ملغي</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-dark" title="عرض التفاصيل"><i
+                                        class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Suspend/Cancel Modal -->
+    <div class="modal fade" id="suspendModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">تعليق / إلغاء جواز رجال أعمال</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">نوع الإجراء</label>
+                        <select class="form-select">
+                            <option value="suspend">تعليق مؤقت</option>
+                            <option value="cancel">إلغاء نهائي</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">رقم القرار الرسمي</label>
+                        <input type="text" class="form-control" placeholder="أدخل رقم القرار...">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">المبررات</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger">تفيذ القرار</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

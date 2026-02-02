@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلبات الجواز العادي</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #315d8e;
+            --primary-hover: #214164;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-passport fa-2x text-primary"></i>
+            <span class="sidebar-brand">الجواز العادي</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="requests.html" class="active"><i class="fas fa-file-invoice"></i> الطلبات (جديد/تجديد)</a></li>
+            <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> المواعيد</a></li>
+            <li><a href="record.html"><i class="fas fa-search"></i> سجل الجوازات</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> الإعدادات</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث برقم الطلب أو الهوية...">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="badge bg-primary px-3 py-2">موظف وثائق سفر (عادي)</div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Ordinary+Officer&background=315d8e&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">أحمد العتيبي</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="m-0">أرشيف وطلبات الجواز العادي</h4>
+            <div class="d-flex gap-2">
+                <select class="form-select form-select-sm" style="width: 150px;">
+                    <option>الكل</option>
+                    <option>إصدار جديد</option>
+                    <option>تجديد</option>
+                    <option>بدل فاقد/تالف</option>
+                </select>
+                <button class="btn btn-sm btn-primary-custom"><i class="fas fa-filter me-1"></i> تصفية</button>
+            </div>
+        </div>
+
+        <div class="custom-card">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>المواطن</th>
+                            <th>رقم الهوية</th>
+                            <th>نوع الطلب</th>
+                            <th>التحقق البيومتري</th>
+                            <th>الحالة</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">#ORD-1001</td>
+                            <td>محمد عبدالله الصالح</td>
+                            <td>1011223344</td>
+                            <td>إصدار جديد</td>
+                            <td><span class="badge bg-success">مكتمل (بصمة + صورة)</span></td>
+                            <td><span class="status-badge bg-pending">بانتظار الموافقة</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target="#viewDocModal"><i class="fas fa-eye"></i></button>
+                                <button class="btn btn-sm btn-primary-custom">اعتماد</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">#ORD-1002</td>
+                            <td>فهد سلمان العمري</td>
+                            <td>1022334455</td>
+                            <td>تجديد جواز</td>
+                            <td><span class="badge bg-secondary">غير مطلوب (ساري)</span></td>
+                            <td><span class="status-badge bg-processing">قيد التدقيق</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target="#viewDocModal"><i class="fas fa-eye"></i></button>
+                                <button class="btn btn-sm btn-primary-custom">تدقيق</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">#ORD-1003</td>
+                            <td>علي حسن القرني</td>
+                            <td>1033445566</td>
+                            <td>بدل تالف</td>
+                            <td><span class="badge bg-success">مكتمل</span></td>
+                            <td><span class="status-badge bg-warning text-dark">مراجعة يدوية</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target="#viewDocModal"><i class="fas fa-eye"></i></button>
+                                <button class="btn btn-sm btn-primary-custom">فحص التلف</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#">السابق</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">التالي</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Document Viewer Modal -->
+    <div class="modal fade" id="viewDocModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">عرض المستندات</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6>صورة الهوية الوطنية</h6>
+                            <div class="border rounded p-2 text-center bg-light"
+                                style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-id-card fa-3x text-secondary"></i>
+                                <span class="d-block mt-2 text-muted">تم التحقق من "يقين"</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6>الصورة الشخصية (الحديثة)</h6>
+                            <div class="border rounded p-2 text-center bg-light"
+                                style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-user-circle fa-3x text-secondary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> تم التحقق من البصمة والتوقيع بنجاح.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-success">طباعة تقرير</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

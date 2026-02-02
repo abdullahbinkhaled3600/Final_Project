@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلبات تسجيل المواليد - سجل المواليد</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-hover: #0284c7;
+        }
+
+        .sidebar-brand,
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: white;
+        }
+
+        .doc-preview {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .doc-preview:hover {
+            border-color: var(--primary-color);
+            background: #e0f2fe;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-baby-carriage fa-2x text-primary"></i>
+            <span class="sidebar-brand">سجل المواليد</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="birth_requests.html" class="active"><i class="fas fa-file-invoice"></i> طلبات تسجيل
+                    المواليد</a></li>
+            <li><a href="new_birth.html"><i class="fas fa-plus-circle"></i> تسجيل مولود جديد</a></li>
+            <li><a href="certificates.html"><i class="fas fa-certificate"></i> إصدار الشهادات</a></li>
+            <li><a href="corrections.html"><i class="fas fa-edit"></i> تصحيح البيانات</a></li>
+            <li><a href="archive.html"><i class="fas fa-archive"></i> الأرشيف</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="../index.html"><i class="fas fa-arrow-right"></i> عودة للأحوال</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="m-0">طلبات تسجيل المواليد</h4>
+            <button class="btn btn-outline-secondary"><i class="fas fa-filter"></i> تصفية الطلبات</button>
+        </div>
+
+        <div class="custom-card">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>اسم المولود</th>
+                            <th>تاريخ الولادة</th>
+                            <th>المستندات</th>
+                            <th>مقدم الطلب</th>
+                            <th>الحالة</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#BIRTH-2201</td>
+                            <td>فهد عبدالله القحطاني</td>
+                            <td>2024-06-03</td>
+                            <td><span class="badge bg-secondary">3 مرفقات</span></td>
+                            <td>عبدالله القحطاني (أب)</td>
+                            <td><span class="badge bg-warning text-dark">بانتظار التدقيق</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary-custom" data-bs-toggle="modal"
+                                    data-bs-target="#requestModal">معالجة</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BIRTH-2195</td>
+                            <td>نورة فيصل السالم</td>
+                            <td>2024-06-02</td>
+                            <td><span class="badge bg-secondary">2 مرفقات</span></td>
+                            <td>فيصل السالم (أب)</td>
+                            <td><span class="badge bg-danger">مرفوض (نقص بيانات)</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-secondary">عرض السبب</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Processing Modal -->
+    <div class="modal fade" id="requestModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">معالجة طلب تسجيل مولود (#BIRTH-2201)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Data Compariosn -->
+                        <div class="col-lg-7 border-start">
+                            <h6 class="fw-bold text-primary mb-3">بيانات الطلب</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted">اسم المولود</label>
+                                    <input type="text" class="form-control" value="فهد Abdullah Al-Qahtani" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted">الجنس</label>
+                                    <input type="text" class="form-control" value="ذكر" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted">تاريخ الولادة</label>
+                                    <input type="text" class="form-control" value="2024-06-03" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted">مكان الولادة</label>
+                                    <input type="text" class="form-control" value="مستشفى دلة - الرياض" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted">رقم هوية الأب</label>
+                                    <input type="text" class="form-control" value="1055448896" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted">رقم هوية الأم</label>
+                                    <input type="text" class="form-control" value="1022336655" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Documents Viewer -->
+                        <div class="col-lg-5">
+                            <h6 class="fw-bold text-primary mb-3">المستندات المرفقة</h6>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <div class="doc-preview" onclick="viewDoc('notif')">
+                                        <i class="fas fa-file-medical fa-2x text-muted mb-2"></i>
+                                        <div class="small">بلاغ الولادة</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="doc-preview" onclick="viewDoc('id_card')">
+                                        <i class="fas fa-id-card fa-2x text-muted mb-2"></i>
+                                        <div class="small">هوية الأب</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="doc-preview" onclick="viewDoc('family_card')">
+                                        <i class="fas fa-users fa-2x text-muted mb-2"></i>
+                                        <div class="small">كرت العائلة</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 p-3 bg-light border rounded d-none" id="docViewerPane">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong>معاينة: بلاغ الولادة</strong>
+                                    <button class="btn btn-sm text-danger" onclick="closeDoc()"><i
+                                            class="fas fa-times"></i></button>
+                                </div>
+                                <img src="https://placehold.co/400x300?text=Hospital+Notification"
+                                    class="img-fluid border rounded" alt="Doc">
+                            </div>
+
+                            <hr>
+                            <label class="form-label">ملاحظات الموظف / سبب الرفض</label>
+                            <textarea class="form-control" rows="3"
+                                placeholder="اكتب ملاحظاتك هنا في حال الرفض أو طلب التعديل..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger"><i class="fas fa-times me-1"></i> رفض الطلب</button>
+                    <button type="button" class="btn btn-success"><i class="fas fa-check me-1"></i> اعتماد
+                        وإصدار</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function viewDoc(type) {
+            const pane = document.getElementById('docViewerPane');
+            pane.classList.remove('d-none');
+            // In a real app, this would switch the image source based on 'type'
+        }
+        function closeDoc() {
+            document.getElementById('docViewerPane').classList.add('d-none');
+        }
+    </script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

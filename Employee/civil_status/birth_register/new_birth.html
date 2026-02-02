@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل مولود جديد - سجل المواليد</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-hover: #0284c7;
+        }
+
+        .sidebar-brand,
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-baby-carriage fa-2x text-primary"></i>
+            <span class="sidebar-brand">سجل المواليد</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="birth_requests.html"><i class="fas fa-file-invoice"></i> طلبات تسجيل المواليد</a></li>
+            <li><a href="new_birth.html" class="active"><i class="fas fa-plus-circle"></i> تسجيل مولود جديد</a></li>
+            <li><a href="certificates.html"><i class="fas fa-certificate"></i> إصدار الشهادات</a></li>
+            <li><a href="corrections.html"><i class="fas fa-edit"></i> تصحيح البيانات</a></li>
+            <li><a href="archive.html"><i class="fas fa-archive"></i> الأرشيف</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="../index.html"><i class="fas fa-arrow-right"></i> عودة للأحوال</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h4 class="mb-4">تسجيل واقعة ميلاد (يدوي)</h4>
+
+        <div class="custom-card">
+            <form>
+                <div class="row g-3">
+                    <!-- Notification Info -->
+                    <div class="col-12">
+                        <h6 class="text-primary border-bottom pb-2 fw-bold"><i class="fas fa-hospital me-2"></i>بيانات
+                            بلاغ الولادة</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">رقم بلاغ الولادة (من وزارة الصحة)</label>
+                        <input type="text" class="form-control" placeholder="مثال: NOT-102554">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">تاريخ البلاغ</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">اسم المستشفى</label>
+                        <input type="text" class="form-control" placeholder="بحث عن اسم المستشفى...">
+                    </div>
+
+                    <!-- Newborn Info -->
+                    <div class="col-12 mt-4">
+                        <h6 class="text-primary border-bottom pb-2 fw-bold"><i class="fas fa-baby me-2"></i>بيانات
+                            المولود</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">الاسم الأول</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">اسم الأب</label>
+                        <input type="text" class="form-control" readonly placeholder="يتم جلبه آلياً">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">اسم الجد</label>
+                        <input type="text" class="form-control" readonly placeholder="يتم جلبه آلياً">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">اسم العائلة</label>
+                        <input type="text" class="form-control" readonly placeholder="يتم جلبه آلياً">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">الجنس</label>
+                        <select class="form-select">
+                            <option>ذكر</option>
+                            <option>أنثى</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">تاريخ الولادة</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">وقت الولادة</label>
+                        <input type="time" class="form-control">
+                    </div>
+
+                    <!-- Parents Info -->
+                    <div class="col-12 mt-4">
+                        <h6 class="text-primary border-bottom pb-2 fw-bold"><i class="fas fa-users me-2"></i>بيانات
+                            الوالدين</h6>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">رقم هوية الأب</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="رقم الهوية الوطنية">
+                            <button class="btn btn-outline-secondary" type="button">تحقق</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">رقم هوية الأم</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="رقم الهوية الوطنية">
+                            <button class="btn btn-outline-secondary" type="button">تحقق</button>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="col-12 mt-5 text-end">
+                        <button type="button" class="btn btn-secondary ms-2">إلغاء</button>
+                        <button type="submit" class="btn btn-primary-custom px-4"><i class="fas fa-save me-1"></i> تسجيل
+                            وإصدار شهادة</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

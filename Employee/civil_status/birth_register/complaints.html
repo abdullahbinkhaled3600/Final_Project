@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشكاوى - سجل المواليد</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-hover: #0284c7;
+        }
+
+        .sidebar-brand,
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: white;
+        }
+
+        .attachment-link {
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+            margin-left: 10px;
+            padding: 5px 10px;
+            background: #f1f5f9;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .attachment-link:hover {
+            background: #e2e8f0;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-baby-carriage fa-2x text-primary"></i>
+            <span class="sidebar-brand">سجل المواليد</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="birth_requests.html"><i class="fas fa-file-invoice"></i> طلبات تسجيل المواليد</a></li>
+            <li><a href="new_birth.html"><i class="fas fa-plus-circle"></i> تسجيل مولود جديد</a></li>
+            <li><a href="certificates.html"><i class="fas fa-certificate"></i> إصدار الشهادات</a></li>
+            <li><a href="corrections.html"><i class="fas fa-edit"></i> تصحيح البيانات</a></li>
+            <li><a href="archive.html"><i class="fas fa-archive"></i> الأرشيف</a></li>
+            <li><a href="complaints.html" class="active"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="../index.html"><i class="fas fa-arrow-right"></i> عودة للأحوال</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h4 class="mb-4">إدارة الشكاوى والبلاغات</h4>
+
+        <div class="custom-card">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>رقم الشكوى</th>
+                            <th>الموضوع</th>
+                            <th>اسم المواطن</th>
+                            <th>تاريخ التقديم</th>
+                            <th>المرفقات</th>
+                            <th>الحالة</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#CMP-205</td>
+                            <td>تأخر في إصدار شهادة الميلاد</td>
+                            <td>محمد ناصر (ولي أمر)</td>
+                            <td>2024-06-03</td>
+                            <td><i class="fas fa-paperclip me-1"></i> لا يوجد</td>
+                            <td><span class="badge bg-warning text-dark">جديدة</span></td>
+                            <td><button class="btn btn-sm btn-primary-custom" data-bs-toggle="modal"
+                                    data-bs-target="#complaintModal">فتح الشكوى</button></td>
+                        </tr>
+                        <tr>
+                            <td>#CMP-202</td>
+                            <td>خطأ في اسم الأم بالشهادة</td>
+                            <td>سعود عبدالعزيز</td>
+                            <td>2024-06-01</td>
+                            <td><i class="fas fa-paperclip text-primary me-1"></i> 2 مرفق</td>
+                            <td><span class="badge bg-info text-dark">جاري المعالجة</span></td>
+                            <td><button class="btn btn-sm btn-primary-custom"
+                                    onclick="openComplaintWithDocs()">متابعة</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complaint Processing Modal -->
+    <div class="modal fade" id="complaintModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">تفاصيل الشكوى #CMP-202</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="fw-bold d-block">نص الشكوى:</label>
+                        <p class="p-3 bg-light rounded text-muted">
+                            السلام عليكم، تم استلام شهادة الميلاد لابني (سعد) ولكن يوجد خطأ في اسم الأم، حيث كتب (نوره)
+                            والصحيح (نورة). أرفقت لكم صورة من كرت العائلة وهوية الأم.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="fw-bold d-block mb-2">المستندات المرفقة من المواطن:</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="attachment-link" onclick="viewImage('family_card_sample.jpg')">
+                                <i class="fas fa-image text-primary me-1"></i> كرت العائلة.jpg
+                            </a>
+                            <a href="#" class="attachment-link" onclick="viewImage('mother_id.jpg')">
+                                <i class="fas fa-image text-primary me-1"></i> هوية الأم.jpg
+                            </a>
+                        </div>
+
+                        <!-- Image Viewer Placeholder -->
+                        <div class="mt-2 p-2 border rounded d-none" id="complaintDocViewer">
+                            <small class="text-muted d-block mb-1">معاينة الملف:</small>
+                            <img src="https://placehold.co/600x300?text=Document+Preview"
+                                class="img-fluid rounded border" alt="preview">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">الرد والتوجيه</label>
+                            <select class="form-select mb-2">
+                                <option>قبول الشكوى والبدء في التصحيح</option>
+                                <option>طلب معلومات إضافية</option>
+                                <option>رفض الشكوى (عدم صحة البيانات)</option>
+                            </select>
+                            <textarea class="form-control" rows="4"
+                                placeholder="اكتب نص الرد الذي سيصل للموطن..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-primary-custom"><i class="fas fa-paper-plane me-1"></i> إرسال
+                        الرد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openComplaintWithDocs() {
+            var myModal = new bootstrap.Modal(document.getElementById('complaintModal'));
+            myModal.show();
+        }
+
+        function viewImage(src) {
+            // In a real app this would load the 'src'
+            document.getElementById('complaintDocViewer').classList.remove('d-none');
+        }
+    </script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

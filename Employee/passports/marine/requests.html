@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلبات الجواز البحري</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #0d47a1;
+            /* Marine Blue */
+            --primary-hover: #063175;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-anchor fa-2x text-primary"></i>
+            <span class="sidebar-brand">الجواز البحري</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="requests.html" class="active"><i class="fas fa-ship"></i> طلبات الجواز البحري</a></li>
+            <li><a href="validation.html"><i class="fas fa-user-md"></i> التحقق من اللياقة</a></li>
+            <li><a href="record.html"><i class="fas fa-search"></i> سجل البحّارة</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> الإعدادات</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث...">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="badge bg-primary px-3 py-2">ضابط جوازات بحرية</div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Marine+Officer&background=0d47a1&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">بندر الشمري</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="m-0">طلبات الجواز البحري</h4>
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-primary-custom"><i class="fas fa-plus me-1"></i> إضافة طلب يدوي</button>
+            </div>
+        </div>
+
+        <div class="custom-card">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> يتم التحقق من بيانات البحّارة عبر الربط مع الجهات البحرية.
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>البحّار</th>
+                            <th>الصفة البحرية</th>
+                            <th>المستندات (اللياقة)</th>
+                            <th>المستندات (الجهة)</th>
+                            <th>الحالة</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">#MAR-502</td>
+                            <td>سالم الدوسري</td>
+                            <td>قبطان</td>
+                            <td><span class="badge bg-success">سارية</span></td>
+                            <td><span class="badge bg-success">مكتملة</span></td>
+                            <td><span class="status-badge bg-pending">بانتظار الاعتماد</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target="#viewMarineDocModal"><i class="fas fa-eye"></i></button>
+                                <button class="btn btn-sm btn-success">اعتماد</button>
+                                <button class="btn btn-sm btn-danger">رفض</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">#MAR-503</td>
+                            <td>ماجد عبدالله</td>
+                            <td>بحّار متدرب</td>
+                            <td><span class="badge bg-danger">منتهية/غير صالح</span></td>
+                            <td><span class="badge bg-warning text-dark">ناقصة</span></td>
+                            <td><span class="status-badge bg-processing">معلق</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target="#viewMarineDocModal"><i class="fas fa-eye"></i></button>
+                                <button class="btn btn-sm btn-secondary">إشعار بالنقص</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marine Document Viewer Modal -->
+    <div class="modal fade" id="viewMarineDocModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">مستندات البحّار</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <h6>شهادة اللياقة الطبية</h6>
+                            <div class="bg-light p-3 border text-center">
+                                <i class="fas fa-file-medical fa-3x text-secondary"></i>
+                                <div class="mt-2 text-success">صالح لغاية 2029</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h6>الشهادة البحرية</h6>
+                            <div class="bg-light p-3 border text-center">
+                                <i class="fas fa-certificate fa-3x text-secondary"></i>
+                                <div class="mt-2">معتمدة من هيئة النقل</div>
+                            </div>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">ملاحظات التدقيق</label>
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-primary-custom">حفظ الملاحظات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

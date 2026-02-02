@@ -1,0 +1,329 @@
+:root {
+    --primary-color: #10b981;
+    --primary-hover: #059669;
+    --secondary-color: #64748b;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #06b6d4;
+    --bg-light: #f0fdf4;
+    --text-dark: #1e293b;
+    --border-color: #d1fae5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    direction: rtl;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.text-primary {
+    color: white !important;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 8px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transform: translateX(-5px);
+}
+
+.sidebar-menu a.active {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar-menu a i {
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+}
+
+/* Main Content */
+.main-content {
+    margin-right: 280px;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* Top Navbar */
+.top-navbar {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 350px;
+}
+
+.search-wrapper i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+}
+
+.search-wrapper input {
+    padding-right: 45px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.search-wrapper input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Statistics Cards */
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.stat-icon.bg-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-icon.bg-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.stat-icon.bg-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-icon.bg-info {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+.stat-info h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.stat-info p {
+    margin: 0;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Custom Card */
+.custom-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    padding: 12px;
+    font-size: 0.9rem;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(16, 185, 129, 0.05);
+}
+
+.table tbody td {
+    padding: 12px;
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.status-badge.bg-pending {
+    background-color: var(--warning-color);
+}
+
+.status-badge.bg-processing {
+    background-color: #3b82f6;
+}
+
+.status-badge.bg-approved {
+    background-color: var(--success-color);
+}
+
+.status-badge.bg-rejected {
+    background-color: var(--danger-color);
+}
+
+/* List Group */
+.list-group-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px !important;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: var(--bg-light);
+    transform: translateX(-5px);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Badge */
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar-brand,
+    .sidebar-menu a span {
+        display: none;
+    }
+
+    .main-content {
+        margin-right: 70px;
+        padding: 15px;
+    }
+
+    .search-wrapper {
+        width: 200px;
+    }
+
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}

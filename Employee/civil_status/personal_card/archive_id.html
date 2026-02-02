@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أرشيف الهوية - موظف الهوية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+        }
+
+        .sidebar-brand,
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-id-card fa-2x text-primary"></i>
+            <span class="sidebar-brand">الهوية الوطنية</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="id_requests.html"><i class="fas fa-inbox"></i> طلبات الهوية</a></li>
+            <li><a href="issue_id.html"><i class="fas fa-print"></i> إصدار وتنفيذ</a></li>
+            <li><a href="archive_id.html" class="active"><i class="fas fa-box-open"></i> الأرشيف</a></li>
+            <li><a href="complaints_id.html"><i class="fas fa-headset"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="../index.html"><i class="fas fa-arrow-right"></i> عودة للأحوال</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h4 class="mb-4">سجل أرشيف الهويات الصادرة</h4>
+
+        <div class="custom-card mb-4">
+            <form class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">رقم الهوية</label>
+                    <input type="text" class="form-control" placeholder="10xxxxxxxx">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">تاريخ الإصدار من</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">تاريخ الإصدار إلى</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary-custom w-100">بحث في الأرشيف</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="custom-card">
+            <div class="table-responsive">
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th>رقم النسخة</th>
+                            <th>صاحب الهوية</th>
+                            <th>نوع العملية</th>
+                            <th>تاريخ الإصدار</th>
+                            <th>الموظف المسؤول</th>
+                            <th>الحالة الحالية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>عبدالله محمد العسيري</td>
+                            <td>إصدار جديد</td>
+                            <td>2020-05-15</td>
+                            <td>سعيد القحطاني</td>
+                            <td><span class="badge bg-secondary">منتهية</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>عبدالله محمد العسيري</td>
+                            <td>تجديد</td>
+                            <td>2025-05-14</td>
+                            <td>فهد الدوسري</td>
+                            <td><span class="badge bg-success">سارية</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

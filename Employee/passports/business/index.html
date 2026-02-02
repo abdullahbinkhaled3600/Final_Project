@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جواز رجال الأعمال - الرئيسية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            /* Business Dark Blue/Grey */
+            --primary-hover: #1a252f;
+            --accent-color: #c0392b;
+        }
+
+        .sidebar-brand {
+            color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+
+        .sidebar-header i {
+            color: var(--primary-color) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-briefcase fa-2x"></i>
+            <span class="sidebar-brand">جواز رجال الأعمال</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="requests.html"><i class="fas fa-user-tie"></i> طلبات رجال الأعمال</a></li>
+            <li><a href="approvals.html"><i class="fas fa-stamp"></i> الموافقات الخاصة</a></li>
+            <li><a href="record.html"><i class="fas fa-search"></i> سجل الجوازات</a></li>
+            <li><a href="complaints.html"><i class="fas fa-exclamation-circle"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> الإعدادات</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="بحث باسم رجل الأعمال أو السجل...">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="badge bg-dark px-3 py-2">وحدة كبار العملاء (رجال الأعمال)</div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://ui-avatars.com/api/?name=Business+Officer&background=2c3e50&color=fff"
+                        class="rounded-circle" width="40" height="40" alt="Avatar">
+                    <div class="d-none d-md-block">
+                        <div class="fw-bold" style="font-size: 0.9rem;">أستاذ فيصل</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">إدارة الجوازات الخاصة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mb-4">لوحة تحكم جوازات رجال الأعمال</h4>
+
+        <!-- Statistics -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.1s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-dark text-white">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="stat-val">3</div>
+                    <div class="stat-lbl">طلبات VIP جديدة</div>
+                </div>
+            </div>
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.2s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-secondary text-white">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="stat-val">10</div>
+                    <div class="stat-lbl">بانتظار الموافقات</div>
+                </div>
+            </div>
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.3s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-success text-white">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <div class="stat-val">450</div>
+                    <div class="stat-lbl">جوازات فعالة</div>
+                </div>
+            </div>
+            <div class="col-md-3 animated-fade-in" style="animation-delay: 0.4s;">
+                <div class="custom-card stat-card">
+                    <div class="stat-icon bg-danger text-white">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <div class="stat-val">0</div>
+                    <div class="stat-lbl">جوازات ملغاة</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Recent Requests -->
+            <div class="col-lg-12 animated-fade-in" style="animation-delay: 0.5s;">
+                <div class="custom-card">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="m-0 fw-bold">طلبات رجال الأعمال الأخيرة</h5>
+                        <a href="requests.html" class="btn btn-sm btn-outline-dark">عرض الكل</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>الاسم</th>
+                                    <th>السجل التجاري</th>
+                                    <th>الجهة الطالبة</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراء</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">#VIP-201</td>
+                                    <td>خالد بن مساعد</td>
+                                    <td>1010101010</td>
+                                    <td>الغرفة التجارية</td>
+                                    <td><span class="status-badge bg-pending">بانتظار موافقة الوزارة</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary-custom"
+                                            onclick="window.location.href='requests.html'">متابعة</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">#VIP-202</td>
+                                    <td>شركة الاستثمار الدولية (عن: جون سميث)</td>
+                                    <td>2020202020</td>
+                                    <td>هيئة الاستثمار</td>
+                                    <td><span class="status-badge bg-processing">قيد التدقيق الأمني</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary-custom"
+                                            onclick="window.location.href='requests.html'">تدقيق</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

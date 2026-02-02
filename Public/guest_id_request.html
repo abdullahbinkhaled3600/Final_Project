@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب الحصول على بطاقة شخصية - البوابة الوطنية الموحدة</title>
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/guest_request.css">
+</head>
+
+<body>
+
+    <div class="container main-container request-container">
+
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="شعار الجهة الحكومية" class="logo-img" style="width: 80px;">
+            <h2 class="system-name h4">طلب إصدار بطاقة شخصية</h2>
+            <p class="text-muted">خدمة سريعة (بدون تسجيل دخول)</p>
+        </div>
+
+        <div class="alert alert-warning d-flex align-items-center mb-4 shadow-sm border-0" role="alert"
+            style="border-right: 4px solid #ffc107 !important; background-color: #fff8e1;">
+            <i class="fas fa-exclamation-circle text-warning fa-lg flex-shrink-0 me-3"></i>
+            <div>
+                <strong>تنبيه:</strong> هذه الخدمة متاحة للأفراد بدون الحاجة لإنشاء حساب أو تسجيل الدخول.
+            </div>
+        </div>
+
+        <form action="#" method="POST" id="requestForm">
+
+            <!-- Section 1: Personal Data -->
+            <div class="custom-card request-card mb-4">
+                <h5 class="section-title"><i class="far fa-user me-2"></i>البيانات الشخصية</h5>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="fullName" class="form-label">الاسم الكامل <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="fullName" placeholder="كما هو مدون في شهادة الميلاد"
+                            required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="dob" class="form-label">تاريخ الميلاد <span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="dob" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="birthCertNum" class="form-label">رقم شهادة الميلاد <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="birthCertNum" placeholder="أدخل رقم الشهادة"
+                            required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="issuer" class="form-label">جهة الإصدار <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="issuer" placeholder="مثال: مكتب أحوال الرياض"
+                            required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="motherName" class="form-label">اسم الأم <span class="text-muted">(إن
+                                لزم)</span></label>
+                        <input type="text" class="form-control" id="motherName" placeholder="الاسم الكامل للأم">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Contact & Attachments -->
+            <div class="custom-card request-card mb-4">
+                <h5 class="section-title"><i class="far fa-file-alt me-2"></i>المرفقات والتواصل</h5>
+                <div class="row g-3">
+                    <div class="col-12 mb-3">
+                        <label for="birthCertImg" class="form-label">صورة شهادة الميلاد <span
+                                class="text-danger">*</span></label>
+                        <div class="file-upload-wrapper" onclick="document.getElementById('birthCertImg').click()">
+                            <i class="fas fa-cloud-upload-alt file-upload-icon"></i>
+                            <h6 class="mb-2">اضغط لرفع الصورة</h6>
+                            <p class="text-muted small mb-0">JPEG, PNG, PDF (الحد الأقصى 2MB)</p>
+                            <input type="file" id="birthCertImg" class="d-none" accept=".jpg,.jpeg,.png,.pdf"
+                                onchange="handleFileSelect(this)" required>
+                            <div id="fileName" class="mt-2 text-primary fw-bold"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="phone" class="form-label">رقم الهاتف للتواصل <span
+                                class="text-danger">*</span></label>
+                        <div class="input-group" dir="ltr">
+                            <span class="input-group-text">+966</span>
+                            <input type="tel" class="form-control text-end" id="phone" placeholder="5xxxxxxxx" required>
+                        </div>
+                        <div class="form-text text-end">سيتم إرسال رمز التحقق إلى هذا الرقم.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-between align-items-center">
+                <a href="index.html" class="text-decoration-none text-muted"> <i class="fas fa-arrow-right me-1"></i>
+                    العودة للرئيسية</a>
+                <button type="submit" class="btn btn-primary px-5 mt-0" style="width: auto;">
+                    إرسال الطلب <i class="fas fa-paper-plane me-2"></i>
+                </button>
+            </div>
+
+        </form>
+
+        <footer class="mt-5 text-center text-muted small">
+            &copy; 2026 جميع الحقوق محفوظة - البوابة الوطنية الموحدة
+        </footer>
+
+    </div>
+
+    <!-- OTP Verify Modal -->
+    <div class="modal fade" id="otpModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">التحقق من رقم الجوال</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <div class="mb-4">
+                        <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
+                        <p class="text-muted mb-1">تم إرسال رمز التحقق إلى جوالك</p>
+                        <strong dir="ltr" id="displayPhone">*******</strong>
+                    </div>
+
+                    <form id="otpForm">
+                        <div class="mb-4">
+                            <input type="text" class="form-control otp-input" maxlength="4" placeholder="____" required
+                                autocomplete="one-time-code" inputmode="numeric">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mb-3">تحقق الآن</button>
+                    </form>
+
+                    <div class="d-flex justify-content-between align-items-center small mt-3">
+                        <span class="text-muted">لم يصلك الرمز؟</span>
+                        <a href="#" class="text-decoration-none fw-bold" id="resendLink">إعادة إرسال (<span
+                                id="timer">02:00</span>)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="mb-4">
+                        <div class="rounded-circle bg-success bg-opacity-10 d-inline-flex justify-content-center align-items-center"
+                            style="width: 80px; height: 80px;">
+                            <i class="fas fa-check fa-3x text-success"></i>
+                        </div>
+                    </div>
+                    <h4 class="mb-3 text-success">تم استلام الطلب بنجاح</h4>
+                    <p class="text-muted mb-4">تم تسجيل طلبك ويمكنك متابعة حالته باستخدام رقم الطلب أدناه.</p>
+
+                    <div class="bg-light p-3 rounded mb-4 border">
+                        <small class="text-muted d-block mb-1">رقم الطلب</small>
+                        <h3 class="fw-bold text-primary m-0" id="appId">REQ-2026-####</h3>
+                    </div>
+
+                    <div class="alert alert-info small text-start">
+                        <i class="fas fa-info-circle me-1"></i> <strong>الخطوة التالية:</strong><br>
+                        يرجى مراجعة أقرب فرع للأحوال المدنية مع إحضار الأصول للمطابقة بعد استلام رسالة الموافقة
+                        المبدئية.
+                    </div>
+
+                    <a href="index.html" class="btn btn-primary w-100">العودة للصفحة الرئيسية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // File selection handler
+        function handleFileSelect(input) {
+            const fileNameDiv = document.getElementById('fileName');
+            if (input.files && input.files[0]) {
+                fileNameDiv.innerHTML = '<i class="fas fa-check text-success me-1"></i> ' + input.files[0].name;
+                input.parentElement.classList.add('border-success');
+            } else {
+                fileNameDiv.textContent = '';
+                input.parentElement.classList.remove('border-success');
+            }
+        }
+
+        // OTP Logic
+        const requestForm = document.getElementById('requestForm');
+        const otpModal = new bootstrap.Modal(document.getElementById('otpModal'));
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        const otpForm = document.getElementById('otpForm');
+        const resendLink = document.getElementById('resendLink');
+        let countdown;
+
+        requestForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Validate file
+            const fileInput = document.getElementById('birthCertImg');
+            if (!fileInput.files.length) {
+                alert('يرجى رفع صورة شهادة الميلاد');
+                return;
+            }
+
+            const phoneVal = document.getElementById('phone').value;
+            if (phoneVal) {
+                document.getElementById('displayPhone').innerText = "+966 " + phoneVal;
+            }
+
+            otpModal.show();
+            startTimer(120); // 2 minutes
+        });
+
+        otpForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const otpValue = this.querySelector('input').value;
+            if (otpValue.length >= 4) {
+                // Simulate success
+                const btn = this.querySelector('button');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحقق...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    otpModal.hide();
+                    // Generate Random App ID
+                    const appId = 'REQ-2026-' + Math.floor(1000 + Math.random() * 9000);
+                    document.getElementById('appId').textContent = appId;
+                    successModal.show();
+
+                    // Reset button for future (though we navigate away usually)
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 1500);
+            }
+        });
+
+        function startTimer(duration) {
+            let timer = duration, minutes, seconds;
+            clearInterval(countdown);
+            // Reset link state
+            resendLink.classList.add('disabled', 'text-muted');
+            resendLink.style.pointerEvents = 'none';
+            resendLink.innerHTML = 'إعادة إرسال (<span id="timer">02:00</span>)';
+
+            countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                const timerDisplay = document.getElementById('timer');
+                if (timerDisplay) timerDisplay.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    resendLink.classList.remove('disabled', 'text-muted');
+                    resendLink.style.pointerEvents = 'auto';
+                    resendLink.innerHTML = 'إعادة إرسال الآن';
+                    resendLink.onclick = function (e) {
+                        e.preventDefault();
+                        alert('تم إعادة إرسال الرمز');
+                        startTimer(120);
+                    };
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

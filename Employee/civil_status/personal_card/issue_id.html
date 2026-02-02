@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إصدار الهوية الوطنية - موظف الهوية</title>
+    <!-- Bootstrap 5 CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+        }
+
+        .sidebar-brand,
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: white;
+        }
+
+        /* Realistic ID Card CSS implementation (Mock) */
+        .id-card-preview {
+            width: 350px;
+            height: 220px;
+            background: linear-gradient(135deg, #f0f2f5 0%, #dbeafe 100%);
+            border-radius: 12px;
+            position: relative;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            color: #333;
+            font-family: sans-serif;
+            border: 1px solid #cbd5e1;
+        }
+
+        .id-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #4f46e5;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .id-card-photo {
+            width: 70px;
+            height: 85px;
+            background: #fff;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 15px;
+            top: 55px;
+        }
+
+        .id-detail-row {
+            font-size: 0.7rem;
+            margin-bottom: 4px;
+        }
+
+        .id-detail-label {
+            color: #64748b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-id-card fa-2x text-primary"></i>
+            <span class="sidebar-brand">الهوية الوطنية</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="id_requests.html"><i class="fas fa-inbox"></i> طلبات الهوية</a></li>
+            <li><a href="issue_id.html" class="active"><i class="fas fa-print"></i> إصدار وتنفيذ</a></li>
+            <li><a href="archive_id.html"><i class="fas fa-box-open"></i> الأرشيف</a></li>
+            <li><a href="complaints_id.html"><i class="fas fa-headset"></i> الشكاوى</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a href="../index.html"><i class="fas fa-arrow-right"></i> عودة للأحوال</a></li>
+            <li><a href="#" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h4 class="mb-4">إصدار وتشخيص الهوية الوطنية</h4>
+
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="custom-card mb-4">
+                    <h5 class="fw-bold mb-3">تجهيز الطباعة</h5>
+                    <form onsubmit="event.preventDefault(); showPreview();">
+                        <div class="mb-3">
+                            <label class="form-label">رقم الطلب المعتمد</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" value="ID-8801" id="reqIdInput">
+                                <button class="btn btn-outline-secondary">جلب البيانات</button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الطابعة المستهدفة</label>
+                            <select class="form-select">
+                                <option>طابعة البطاقات الذكية 1 (Main Hall)</option>
+                                <option>طابعة البطاقات الذكية 2 (Back Office)</option>
+                            </select>
+                        </div>
+                        <div class="alert alert-info small">
+                            <i class="fas fa-info-circle me-1"></i> يرجى التأكد من توفر المواد الخام في الطابعة قبل
+                            البدء.
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">معاينة قبل الطباعة</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="custom-card text-center d-none" id="previewContainer">
+                    <h5 class="fw-bold mb-4">معاينة الهوية (الوجه الأمامي)</h5>
+
+                    <!-- Virtual ID Card -->
+                    <div class="id-card-preview text-start">
+                        <div class="id-card-header">
+                            <div style="font-size: 0.8rem; font-weight: bold;">المملكة العربية السعودية<br><span
+                                    style="font-size: 0.6rem; color: #666;">Ministry of Interior</span></div>
+                            <i class="fas fa-crown text-warning"></i>
+                            <div style="font-size: 0.8rem; font-weight: bold; text-align: left;">Kingdom of Saudi
+                                Arabia<br><span style="font-size: 0.6rem; color: #666;">National ID Card</span></div>
+                        </div>
+
+                        <div style="margin-right: 90px;">
+                            <!-- Space for photo on left in RTL? Actually photo is usually on right in AR card but standard design varies. Putting it to accommodate CSS logic above -->
+                            <!-- Adjusting logic: RTL means left is actually left visual if dir=rtl? No, absolute left is left. 
+                                  Let's just replicate a generic layout -->
+                        </div>
+
+                        <div class="id-card-photo">
+                            <img src="https://ui-avatars.com/api/?name=Abdulrahman&size=100"
+                                style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+
+                        <div style="margin-right: 0px; margin-left: 80px;">
+                            <div class="id-detail-row">
+                                <span class="id-detail-label">الاسم:</span> <span class="fw-bold">عبدالرحمن خالد
+                                    العتيبي</span>
+                            </div>
+                            <div class="id-detail-row">
+                                <span class="id-detail-label">Name:</span> <span>Abdulrahman Khaled Al-Otaibi</span>
+                            </div>
+                            <div class="id-detail-row">
+                                <span class="id-detail-label">رقم الهوية / ID No:</span> <span
+                                    class="fw-bold">1044556688</span>
+                            </div>
+                            <div class="id-detail-row">
+                                <span class="id-detail-label">تاريخ الميلاد:</span> <span>15/05/1405</span>
+                            </div>
+                            <div class="id-detail-row">
+                                <span class="id-detail-label">تاريخ الانتهاء:</span> <span>01/01/1450</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button class="btn btn-success px-4" onclick="startPrinting()"><i
+                                class="fas fa-microchip me-2"></i> برمجة الشريحة وطباعة</button>
+                    </div>
+                </div>
+
+                <!-- Print Progress Overlay -->
+                <div class="custom-card text-center d-none" id="printingProgress">
+                    <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                    </div>
+                    <h5>جاري تشخيص البطاقة وبرمجة الشريحة...</h5>
+                    <div class="progress mt-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showPreview() {
+            document.getElementById('previewContainer').classList.remove('d-none');
+        }
+
+        function startPrinting() {
+            document.getElementById('previewContainer').classList.add('d-none');
+            document.getElementById('printingProgress').classList.remove('d-none');
+            setTimeout(() => {
+                alert('تمت عملية الطباعة بنجاح! يرجى استلام البطاقة وفحص الجودة.');
+                window.location.reload();
+            }, 3000);
+        }
+    </script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>
